@@ -36,7 +36,7 @@ on:
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'twrp_a23qx'
+        default: 'twrp_a23xq'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
@@ -96,7 +96,7 @@ jobs:
       run: |
         mkdir ~/bin
         curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-        chmod a+x ~/bin/repo
+        chmod +x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
 
     - name: Initialize repo
@@ -111,7 +111,7 @@ jobs:
 
     - name: Repo Sync
       run: |
-        repo sync -j$(nproc --all) --force-sync
+        repo sync -j$(nproc --all)
       working-directory: workspace
 
     - name: Clone device tree
