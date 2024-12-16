@@ -1,9 +1,53 @@
 name: CI
 on: [push]
+
 jobs:
-  build:
+  sleep_1:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4.2.2
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3.19
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3.19
+      - name: Sleep for 5 hours
+        run: sleep 18000
+
+  sleep_2:
+    runs-on: ubuntu-latest
+    needs: sleep_1  # Depende de sleep_1 para ejecutarse después
+    steps:
+      - name: Sleep for 5 hours
+        run: sleep 18000
+
+  sleep_3:
+    runs-on: ubuntu-latest
+    needs: sleep_2  # Depende de sleep_2 para ejecutarse después
+    steps:
+      - name: Sleep for 5 hours
+        run: sleep 18000
+
+  sleep_4:
+    runs-on: ubuntu-latest
+    needs: sleep_3  # Depende de sleep_3 para ejecutarse después
+    steps:
+      - name: Sleep for 5 hours
+        run: sleep 18000
+
+  sleep_5:
+    runs-on: ubuntu-latest
+    needs: sleep_4  # Depende de sleep_4 para ejecutarse después
+    steps:
+      - name: Sleep for 5 hours
+        run: sleep 18000
+
+  sleep_6:
+    runs-on: ubuntu-latest
+    needs: sleep_5  # Depende de sleep_5 para ejecutarse después
+    steps:
+      - name: Sleep for 5 hours
+        run: sleep 18000
+
+  sleep_7:
+    runs-on: ubuntu-latest
+    needs: sleep_6  # Depende de sleep_6 para ejecutarse después
+    steps:
+      - name: Sleep for 5 hours
+        run: sleep 18000
