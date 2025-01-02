@@ -1,21 +1,5 @@
 ## Automated TWRP compilation based on Github Action
 
-## Notice
-
-1. Github Actions service is **NOT** unlimited so to avoid waste, don't use unverified source code in this, the best used to automate builds of repositories that are already stabilized
-
-2. Before you make any changes, make sure that the repository you are operating in belongs to you. **"Fork" if you want to commit code, otherwise use "Use this template"**
-
-3. issues and Pull Requests may **NOT** get a reply. If you think is really necessary, use email on my profile to contact me
-
-4. Don't ask any questions about your source code, such as
-	- No rule to make ...
-	- Image ... out of size
-
-## Thanks to
-
-All contributors
-
 ## Parameter Description
 
 | Name                 | Description                                       | Example                                                      |
