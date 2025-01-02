@@ -8,9 +8,7 @@
 
 3. issues and Pull Requests may **NOT** get a reply. If you think is really necessary, use email on my profile to contact me
 
-4. Python 2 in Debian (Ubuntu) has been **removed**. If you are working on Android 8.1 and below, use *Recovery Build (Legacy)*
-
-5. Don't ask any questions about your source code, such as
+4. Don't ask any questions about your source code, such as
 	- No rule to make ...
 	- Image ... out of size
 
