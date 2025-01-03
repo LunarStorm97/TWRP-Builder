@@ -11,7 +11,7 @@
 | `DEVICE_PATH`        | Device location                                   | device/samsung/a23xq                                                     |
 | `DEVICE_NAME`        | Model name                                        | a23xq                                                                    |
 | `MAKEFILE_NAME`      | Makefile name                                     | twrp_a23xq                                                               |
-| `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | recovery                                                                 |
+| `BUILD_TARGET`       | Build Target Partition | recovery                                                                 |
 
 ---
 
