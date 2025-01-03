@@ -35,7 +35,7 @@
 
 ## Building the Recovery
 
-5. Click **'Actions-Recovery Build'**:
+5. Click **'Recovery Build'**:
 
    ![Actions Example](https://user-images.githubusercontent.com/37921907/177915304-8731ed80-1d49-48c9-9848-70d0ac8f2720.png)
 
