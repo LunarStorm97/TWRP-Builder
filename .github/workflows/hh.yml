@@ -9,26 +9,10 @@ jobs:
     
     - name: Before
       run: |
-        set -xe
         df -H
 
     - name: Removing stuff
-      run: |
-        set -xe
-        sudo rm -rf /usr/share/dotnet
-        sudo rm -rf /usr/share/swift
-        sudo rm -rf /usr/local/lib/android
-        sudo rm -rf /opt/ghc
-        sudo rm -rf /usr/local/.ghcup
-        sudo rm -rf "/usr/local/share/boost"
-        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-        sudo rm -rf /opt/hostedtoolcache/
-        sudo rm -rf /usr/local/graalvm/
-        sudo rm -rf /usr/local/share/powershell
-        sudo rm -rf /usr/local/share/chromium
-        sudo rm -rf /usr/local/lib/node_modules
-        sudo docker image prune --all --force
-        
+      run: |        
         APT_PARAMS='sudo apt -y -qq -o=Dpkg::Use-Pty=0'
         $APT_PARAMS remove -y '^dotnet-.*'
         $APT_PARAMS remove -y '^llvm-.*'
@@ -42,5 +26,4 @@ jobs:
 
     - name: After
       run: |
-        set -xe
         df -H
