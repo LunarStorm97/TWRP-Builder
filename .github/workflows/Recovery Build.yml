@@ -62,34 +62,33 @@ jobs:
           echo "Build Target: ${{ github.event.inputs.BUILD_TARGET }}.img"
           echo "::endgroup::"
 
-      # Checkout the repository
+      # Checkout the repo
       - name: Check Out
         uses: actions/checkout@v4.2.2
 
-      # Cache repo sync
-      - name: Cache repo sync
-        uses: actions/cache@v4.2.0
-        with:
-          path: |
-            workspace/.repo
-            workspace/.git
-          key: ${{ runner.os }}-repo-sync-${{ hashFiles('**/manifest.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-repo-sync-
-
-      # Cache build dependencies
-      - name: Cache build dependencies
-        uses: actions/cache@v4.2.0
-        with:
-          path: |
-            ~/.ccache
-            workspace/out
-          key: ${{ runner.os }}-build-${{ hashFiles('**/*.cpp') }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-
+      # Cleanup the Actions Workspace
       - name: Cleanup
         uses: rokibhasansagar/slimhub_actions@v23.44.6
+
+      # Cache repo dependencies
+      - name: Cache repo dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/workspace/.repo
+            workspace/.repo
+          key: ${{ runner.os }}-repo-${{ hashFiles('**/repo') }}
+          restore-keys: |
+            ${{ runner.os }}-repo-
+
+      # Cache ccache
+      - name: Cache ccache
+        uses: actions/cache@v3
+        with:
+          path: ~/.ccache
+          key: ${{ runner.os }}-ccache-${{ hashFiles('**/*.cpp') }}
+          restore-keys: |
+            ${{ runner.os }}-ccache-
 
       - name: Prepare the environment
         run: |
