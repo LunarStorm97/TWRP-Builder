@@ -72,6 +72,7 @@ jobs:
 
       - name: Initialize repo
         run: |
+          sudo chown -R $USER:$USER /mnt
           mkdir -p /mnt/workspace
           cd /mnt/workspace
           echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
