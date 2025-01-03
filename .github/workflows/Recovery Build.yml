@@ -45,6 +45,7 @@ jobs:
     steps:
       - name: Display Run Parameters
         run: |
+          echo "The current user is: $USER"
           echo "Manifest URL: ${{ github.event.inputs.MANIFEST_URL }}"
           echo "Manifest Branch: ${{ github.event.inputs.MANIFEST_BRANCH }}"
           echo "Device Tree URL: ${{ github.event.inputs.DEVICE_TREE_URL }}"
