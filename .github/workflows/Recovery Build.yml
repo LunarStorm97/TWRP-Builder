@@ -45,7 +45,6 @@ jobs:
     steps:
       - name: Display Run Parameters
         run: |
-          echo "The current user is: $USER"
           echo "Manifest URL: ${{ github.event.inputs.MANIFEST_URL }}"
           echo "Manifest Branch: ${{ github.event.inputs.MANIFEST_BRANCH }}"
           echo "Device Tree URL: ${{ github.event.inputs.DEVICE_TREE_URL }}"
@@ -73,8 +72,8 @@ jobs:
 
       - name: Initialize repo
         run: |
-          sudo chown -R $USER:$USER /mnt
-          mkdir -p /mnt/workspace
+          sudo mkdir -p /mnt/workspace
+          sudo chown $USER:$USER /mnt/workspace
           cd /mnt/workspace
           echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
           repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
