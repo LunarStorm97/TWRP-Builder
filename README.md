@@ -1,6 +1,6 @@
-# Automated TWRP Compilation Using Github Actions
+## Automated TWRP Compilation Using Github Actions
 
-## Parameter Description
+### Parameter Description
 
 | Name                 | Description                                       | Example                                                                  |
 | -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -15,7 +15,7 @@
 
 ---
 
-## How to Use
+### How to Use
 
 1. **If you want to commit code**, click **'Fork'** in the upper-right corner of this repository:
 
@@ -33,7 +33,7 @@
 
 ---
 
-## Building the Recovery
+### Building the Recovery
 
 5. Click **'Actions-Recovery Build'**:
 
@@ -47,7 +47,7 @@
 
 ---
 
-## Compilation Results
+### Compilation Results
 
 The compiled recovery can be downloaded from the [Release](../../releases) section.
 
