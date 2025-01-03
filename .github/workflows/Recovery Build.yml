@@ -79,18 +79,8 @@ jobs:
 
       - name: Install repo
         run: |
-         # Crea el directorio ~/.bin
-         mkdir -p ~/.bin
-
-         # Descarga el archivo 'repo' y lo coloca en ~/.bin
-         curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-
-         # Agrega permisos ejecutables
-         chmod a+rx ~/.bin/repo
-
-         # Actualiza el PATH
-         export PATH=$HOME/.bin:$PATH
-         echo "PATH=$HOME/.bin:\$PATH" >> $GITHUB_ENV
+          curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
+          chmod a+rx /usr/bin/repo
 
       - name: Initialize repo
         run: |
