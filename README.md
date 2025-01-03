@@ -2,18 +2,18 @@
 
 ## Parameter Description
 
-| Name                 | Description                                       | Example                                                      |
-| -------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| Name                 | Description                                       | Example                                                                  |
+| -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------ |
 | `MANIFEST_URL`       | Source address                                    | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git |
-| `MANIFEST_BRANCH`    | Source branch                                     | twrp-12.1                                                    |
-| `DEVICE_TREE_URL`    | Device address                                    | https://github.com/TeamWin/android_device_asus_I003D         |
-| `DEVICE_TREE_BRANCH` | Device branch                                     | android-12.1                                                 |
-| `DEVICE_PATH`        | Device location                                   | device/asus/I003D                                            |
-| `DEVICE_NAME`        | Model name                                        | I003D                                                        |
-| `MAKEFILE_NAME`      | Makefile name                                     | twrp_I003D                                                   |
-| `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | recovery                                                     |
+| `MANIFEST_BRANCH`    | Source branch                                     | twrp-12.1                                                                |
+| `DEVICE_TREE_URL`    | Device address                                    | https://github.com/TeamWin/android_device_asus_I003D                     |
+| `DEVICE_TREE_BRANCH` | Device branch                                     | android-12.1                                                             |
+| `DEVICE_PATH`        | Device location                                   | device/asus/I003D                                                        |
+| `DEVICE_NAME`        | Model name                                        | I003D                                                                    |
+| `MAKEFILE_NAME`      | Makefile name                                     | twrp_I003D                                                               |
+| `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | recovery                                                                 |
 
------
+---
 
 ## How to use
 
@@ -47,10 +47,10 @@ For example, your username is: JohnSmith
 
 #### 7. After filling in, click 'Run workflow' to start running
 
------
+---
 
 ## Compilation results
 
 Can be downloaded at [Release](../../releases)
 
------
+---
