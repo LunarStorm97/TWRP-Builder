@@ -72,8 +72,8 @@ jobs:
 
       - name: Initialize repo
         run: |
-          mkdir workspace
-          cd workspace
+          mkdir -p /mnt/workspace
+          cd /mnt/workspace
           echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
           repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
         id: pwd
@@ -81,7 +81,7 @@ jobs:
       - name: Repo Sync
         run: |
           repo sync -j$(nproc --all) --force-sync
-        working-directory: workspace
+        working-directory: /mnt/workspace
 
       - name: Clone device tree
         run: |
