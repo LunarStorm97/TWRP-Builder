@@ -106,11 +106,6 @@ jobs:
         working-directory: ${{ steps.pwd.outputs.workspace-folder }}
         continue-on-error: true
 
-      - name: Set Swap Space
-        uses: pierotofy/set-swap-space@master
-        with:
-          swap-size-gb: 10
-
       - name: Building recovery
         run: |
           source build/envsetup.sh
