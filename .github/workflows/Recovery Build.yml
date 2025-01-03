@@ -75,7 +75,6 @@ jobs:
           sudo mkdir -p /mnt/workspace
           sudo chown $USER:$USER /mnt/workspace
           cd /mnt/workspace
-          echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
           repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
         id: pwd
 
@@ -87,7 +86,7 @@ jobs:
       - name: Clone device tree
         run: |
           git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_PATH }}
-        working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+        working-directory: /mnt/workspace
 
       - name: Building recovery
         run: |
@@ -95,7 +94,7 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng
           make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
-        working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+        working-directory: /mnt/workspace
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v2.1.0
