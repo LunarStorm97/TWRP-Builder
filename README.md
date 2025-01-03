@@ -2,15 +2,15 @@
 
 ### Parameter Description
 
-| Name                 | Description                                       | Example                                                                  |
-| -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------ |
-| `MANIFEST_URL`       | Source address                                    | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git |
-| `MANIFEST_BRANCH`    | Source branch                                     | twrp-12.1                                                                |
-| `DEVICE_TREE_URL`    | Device address                                    | https://github.com/TeamWin/android_device_samsung_a23xq                  |
-| `DEVICE_TREE_BRANCH` | Device branch                                     | android-12.1                                                             |
-| `DEVICE_PATH`        | Device location                                   | device/samsung/a23xq                                                     |
-| `DEVICE_NAME`        | Model name                                        | a23xq                                                                    |
-| `MAKEFILE_NAME`      | Makefile name                                     | twrp_a23xq                                                               |
+| Name                 | Description            | Example                                                                  |
+| -------------------- | ---------------------- | ------------------------------------------------------------------------ |
+| `MANIFEST_URL`       | Source address         | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git |
+| `MANIFEST_BRANCH`    | Source branch          | twrp-12.1                                                                |
+| `DEVICE_TREE_URL`    | Device address         | https://github.com/TeamWin/android_device_samsung_a23xq                  |
+| `DEVICE_TREE_BRANCH` | Device branch          | android-12.1                                                             |
+| `DEVICE_PATH`        | Device location        | device/samsung/a23xq                                                     |
+| `DEVICE_NAME`        | Model name             | a23xq                                                                    |
+| `MAKEFILE_NAME`      | Makefile name          | twrp_a23xq                                                               |
 | `BUILD_TARGET`       | Build Target Partition | recovery                                                                 |
 
 ---
