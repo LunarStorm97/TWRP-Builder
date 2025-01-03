@@ -1,6 +1,6 @@
-## Automated TWRP Compilation Using Github Actions
+# Automated TWRP Compilation Using GitHub Actions
 
-### Parameter Description
+## Parameter Description
 
 | Name                 | Description            | Example                                                                  |
 | -------------------- | ---------------------- | ------------------------------------------------------------------------ |
@@ -15,7 +15,7 @@
 
 ---
 
-### How to Use
+## How to Use
 
 1. **If you want to commit code**, click **'Fork'** in the upper-right corner of this repository:
 
@@ -29,11 +29,11 @@
 
    ![Username Example](https://user-images.githubusercontent.com/37921907/177915106-5bde6fc9-303c-479e-b290-22b48efd1e4e.png)
 
-4. Change the [username and email](https://github.com/CaptainThrowback/Action-Recovery-Builder/blob/main/.github/workflows/Recovery%20Build.yml#L100-L101) in the workflow to reflect your Github credentials (optional).
+4. Change the [username and email](https://github.com/CaptainThrowback/Action-Recovery-Builder/blob/main/.github/workflows/Recovery%20Build.yml#L100-L101) in the workflow to reflect your GitHub credentials (optional).
 
 ---
 
-### Building the Recovery
+## Building the Recovery
 
 5. Click **'Actions-Recovery Build'**:
 
@@ -47,8 +47,6 @@
 
 ---
 
-### Compilation Results
+## Compilation Results
 
 The compiled recovery can be downloaded from the [Release](../../releases) section.
-
----
