@@ -79,7 +79,7 @@ jobs:
 
       - name: Install repo
         run: |
-          curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
+          sudo curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
           chmod a+rx /usr/bin/repo
 
       - name: Initialize repo
