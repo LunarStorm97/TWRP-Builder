@@ -41,7 +41,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: read  # Necessary for better security handling
     steps:
       - name: Display Run Parameters
         run: |
