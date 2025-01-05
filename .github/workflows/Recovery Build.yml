@@ -40,20 +40,19 @@ jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: /mnt/workspace
+    permissions:
+      contents: write
     steps:
       - name: Display Run Parameters
         run: |
-          echo "MANIFEST URL: ${{ github.event.inputs.MANIFEST_URL }}"
-          echo "MANIFEST BRANCH: ${{ github.event.inputs.MANIFEST_BRANCH }}"
-          echo "DEVICE TREE URL: ${{ github.event.inputs.DEVICE_TREE_URL }}"
-          echo "DEVICE TREE BRANCH: ${{ github.event.inputs.DEVICE_TREE_BRANCH }}"
-          echo "DEVICE PATCH: ${{ github.event.inputs.DEVICE_PATH }}"
-          echo "DEVICE NAME: ${{ github.event.inputs.DEVICE_NAME }}"
-          echo "MAKEFILE NAME: ${{ github.event.inputs.MAKEFILE_NAME }}"
-          echo "BUILD TARGET: ${{ github.event.inputs.BUILD_TARGET }}.img"
+          echo "Manifest URL: ${{ github.event.inputs.MANIFEST_URL }}"
+          echo "Manifest Branch: ${{ github.event.inputs.MANIFEST_BRANCH }}"
+          echo "Device Tree URL: ${{ github.event.inputs.DEVICE_TREE_URL }}"
+          echo "Device Tree Branch: ${{ github.event.inputs.DEVICE_TREE_BRANCH }}"
+          echo "Device Path: ${{ github.event.inputs.DEVICE_PATH }}"
+          echo "Device Name: ${{ github.event.inputs.DEVICE_NAME }}"
+          echo "Makefile Name: ${{ github.event.inputs.MAKEFILE_NAME }}"
+          echo "Build Target: ${{ github.event.inputs.BUILD_TARGET }}.img"
 
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -63,8 +62,6 @@ jobs:
           sudo apt update
           sudo apt upgrade
           sudo apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-          sudo mkdir -p /mnt/workspace
-          sudo chown $USER:$USER /mnt/workspace
 
       - name: Install repo
         run: |
@@ -75,15 +72,20 @@ jobs:
 
       - name: Initialize repo
         run: |
+          sudo mkdir -p /mnt/workspace
+          sudo chown $USER:$USER /mnt/workspace
+          cd /mnt/workspace
           repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
 
       - name: Repo Sync
         run: |
           repo sync -j$(nproc --all) --force-sync
+        working-directory: /mnt/workspace
 
       - name: Clone device tree
         run: |
           git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_PATH }}
+        working-directory: /mnt/workspace
 
       - name: Building recovery
         run: |
@@ -91,6 +93,7 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng
           make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
+        working-directory: /mnt/workspace
 
       - name: GH Release
         uses: softprops/action-gh-release@v2.1.0
@@ -100,8 +103,8 @@ jobs:
           name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
           body: |
-            MANIFEST: ${{ github.event.inputs.MANIFEST_BRANCH }}
-            DEVICE: ${{ github.event.inputs.DEVICE_NAME }}
-            TARGET: ${{ github.event.inputs.BUILD_TARGET }}.img
+            Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
+            Device: ${{ github.event.inputs.DEVICE_NAME }}
+            Target: ${{ github.event.inputs.BUILD_TARGET }}.img
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
