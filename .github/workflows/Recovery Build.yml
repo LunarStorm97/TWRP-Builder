@@ -70,6 +70,13 @@ jobs:
           chmod a+rx ~/.bin/repo
           sudo ln -sf ~/.bin/repo /usr/bin/repo
 
+      - name: Initialize repo
+        run: |
+          sudo mkdir -p /mnt/workspace
+          sudo chown $USER:$USER /mnt/workspace
+          cd /mnt/workspace
+          repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
+
       - name: Cache repo
         uses: actions/cache@v3
         with:
@@ -78,12 +85,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-repo-
 
-      - name: Initialize repo
-        run: |
-          sudo mkdir -p /mnt/workspace
-          sudo chown $USER:$USER /mnt/workspace
-          cd /mnt/workspace
-          repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
 
       - name: Repo Sync
         run: |
