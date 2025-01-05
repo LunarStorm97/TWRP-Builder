@@ -82,14 +82,6 @@ jobs:
           repo sync -j$(nproc --all) --force-sync
         working-directory: /mnt/workspace
 
-      - name: Cache repo
-        uses: actions/cache@v3
-        with:
-          path: /mnt/workspace/.repo
-          key: ${{ runner.os }}-repo-${{ hashFiles('**/.repo/manifests/*') }}
-          restore-keys: |
-            ${{ runner.os }}-repo-
-
       - name: Clone device tree
         run: |
           git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_PATH }}
