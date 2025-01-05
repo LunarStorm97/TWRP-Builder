@@ -77,6 +77,11 @@ jobs:
           cd /mnt/workspace
           repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
 
+      - name: Repo Sync
+        run: |
+          repo sync -j$(nproc --all) --force-sync
+        working-directory: /mnt/workspace
+
       - name: Cache repo
         uses: actions/cache@v3
         with:
@@ -84,12 +89,6 @@ jobs:
           key: ${{ runner.os }}-repo-${{ hashFiles('**/.repo/manifests/*') }}
           restore-keys: |
             ${{ runner.os }}-repo-
-
-
-      - name: Repo Sync
-        run: |
-          repo sync -j$(nproc --all) --force-sync
-        working-directory: /mnt/workspace
 
       - name: Clone device tree
         run: |
