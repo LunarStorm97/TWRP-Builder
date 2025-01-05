@@ -40,6 +40,9 @@ jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: /mnt/workspace
     steps:
       - name: Display Run Parameters
         run: |
@@ -60,6 +63,8 @@ jobs:
           sudo apt update
           sudo apt upgrade
           sudo apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+          sudo mkdir -p /mnt/workspace
+          sudo chown $USER:$USER /mnt/workspace
 
       - name: Install repo
         run: |
@@ -70,20 +75,15 @@ jobs:
 
       - name: Initialize repo
         run: |
-          sudo mkdir -p /mnt/workspace
-          sudo chown $USER:$USER /mnt/workspace
-          cd /mnt/workspace
           repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
 
       - name: Repo Sync
         run: |
           repo sync -j$(nproc --all) --force-sync
-        working-directory: /mnt/workspace
 
       - name: Clone device tree
         run: |
           git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_PATH }}
-        working-directory: /mnt/workspace
 
       - name: Building recovery
         run: |
@@ -91,7 +91,6 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng
           make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
-        working-directory: /mnt/workspace
 
       - name: GH Release
         uses: softprops/action-gh-release@v2.1.0
