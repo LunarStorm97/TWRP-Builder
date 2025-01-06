@@ -14,7 +14,7 @@ on:
       DEVICE_TREE_URL:
         description: "DEVICE_TREE_URL"
         required: true
-        default: "https://github.com/LunarStorm97/50ed992"
+        default: "https://github.com/TeamWin/android_device_samsung_a23xq"
       DEVICE_TREE_BRANCH:
         description: "DEVICE_TREE_BRANCH"
         required: true
@@ -40,7 +40,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Display Run Parameters
+      - name: Display run parameters
         run: |
           echo "MANIFEST URL: ${{ github.event.inputs.MANIFEST_URL }}"
           echo "MANIFEST BRANCH: ${{ github.event.inputs.MANIFEST_BRANCH }}"
@@ -74,7 +74,7 @@ jobs:
           repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
         working-directory: /mnt/workspace
 
-      - name: Repo Sync
+      - name: Repo sync
         run: |
           repo sync -j$(nproc --all)
         working-directory: /mnt/workspace
@@ -84,7 +84,7 @@ jobs:
           git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_PATH }}
         working-directory: /mnt/workspace
 
-      - name: Building recovery
+      - name: Build recovery
         run: |
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
