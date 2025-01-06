@@ -74,7 +74,7 @@ jobs:
           repo init -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }} --depth=1
         working-directory: /mnt/workspace
 
-      - name: Repo sync
+      - name: Sync repo
         run: |
           repo sync -j$(nproc --all)
         working-directory: /mnt/workspace
