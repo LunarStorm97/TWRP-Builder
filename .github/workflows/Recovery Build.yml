@@ -68,6 +68,11 @@ jobs:
           distribution: "temurin"
           java-version: "11"
 
+      - name: Setup Python
+        uses: actions/setup-python@v5.3.0
+        with:
+          python-version: '2.x'            
+
       - name: Install repo
         run: |
           mkdir -p ~/.bin
