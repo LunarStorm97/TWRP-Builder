@@ -38,7 +38,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Display run parameters
         run: |
@@ -59,21 +59,8 @@ jobs:
           sudo apt update
           sudo apt upgrade
           sudo apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-          sudo apt install python3
           sudo mkdir -p /mnt/workspace
           sudo chown $USER:$USER /mnt/workspace
-
-      - name: Setup Java JDK
-        uses: actions/setup-java@v4.6.0
-        with:
-          distribution: "temurin"
-          java-version: "11"           
-
-      - name: Switch to Python2
-        run: |
-          sudo apt install python
-          sudo rm -rf /usr/bin/python
-          sudo ln -s /usr/bin/python2 /usr/bin/python
 
       - name: Install repo
         run: |
