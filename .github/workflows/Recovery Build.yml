@@ -66,12 +66,13 @@ jobs:
         uses: actions/setup-java@v4.6.0
         with:
           distribution: "temurin"
-          java-version: "11"
+          java-version: "11"           
 
-      - name: Setup Python
-        uses: actions/setup-python@v5.3.0
-        with:
-          python-version: '3.13'            
+      - name: Switch to Python2
+        run: |
+          sudo apt install python
+          sudo rm -rf /usr/bin/python
+          sudo ln -s /usr/bin/python2 /usr/bin/python
 
       - name: Install repo
         run: |
