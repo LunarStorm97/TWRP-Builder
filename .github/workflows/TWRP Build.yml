@@ -81,12 +81,13 @@ jobs:
 
       - name: Clone device tree
         run: |
-          git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_PATH }}
+          git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_PATH }} --depth=1
         working-directory: /mnt/workspace
 
       - name: Build recovery
         run: |
           source build/envsetup.sh
+          export ALLOW_MISSING_DEPENDENCIES=true
           lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng
           make ${{ github.event.inputs.PARTITION_TARGET }}image -j$(nproc --all)
         working-directory: /mnt/workspace
