@@ -72,9 +72,7 @@ jobs:
         uses: actions/cache@v4.2.0
         with:
           path: /mnt/workspace/.repo
-          key: repo-${{ github.event.inputs.MANIFEST_URL }}-${{ github.event.inputs.MANIFEST_BRANCH }}
-          restore-keys: |
-            repo-${{ github.event.inputs.MANIFEST_URL }}
+          key: repo-${{ github.event.inputs.MANIFEST_BRANCH }}
 
       - name: Initialize repo
         run: |
