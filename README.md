@@ -1,6 +1,6 @@
 ## TWRP Builder
 
-This repository provides a GitHub Actions workflow to automatically build a custom TWRP recovery image. By using this workflow, you can generate a recovery image the need to set up a local build environment.
+This repository provides a GitHub Actions workflow to automatically build a custom TWRP recovery image. By using this workflow, you can generate a recovery image without the need to set up a local build environment.
 
 ### Description
 
