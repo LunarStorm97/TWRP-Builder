@@ -10,14 +10,14 @@ The TWRP Builder workflow allows you to build a custom TWRP recovery image for a
 
 Before running the workflow, make sure to configure the following parameters:
 
-`MANIFEST_URL`: The URL of the TWRP manifest.
-`MANIFEST_BRANCH`: The branch of the manifest you want to use.
-`DEVICE_TREE_URL`: The URL of the device tree for your specific model.
-`DEVICE_TREE_BRANCH`: The branch of the device tree.
-`DEVICE_PATH`: The path within the device tree where your device configuration is located.
-`DEVICE_TARGET`: The codename of your device.
-`MAKEFILE_NAME`: The build configuration file name for your device.
-`PARTITION_TARGET`: The partition you want to build (e.g., `recovery`).
+- `MANIFEST_URL`: The URL of the TWRP manifest.
+- `MANIFEST_BRANCH`: The branch of the manifest you want to use.
+- `DEVICE_TREE_URL`: The URL of the device tree for your specific model.
+- `DEVICE_TREE_BRANCH`: The branch of the device tree.
+- `DEVICE_PATH`: The path within the device tree where your device configuration is located.
+- `DEVICE_TARGET`: The codename of your device.
+- `MAKEFILE_NAME`: The build configuration file name for your device.
+- `PARTITION_TARGET`: The partition you want to build (e.g., `recovery`).
 
 ### Usage
 
