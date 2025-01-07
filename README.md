@@ -27,4 +27,4 @@ Before running the workflow, make sure to configure the following parameters:
 
 ### Credits
 
-This workflow is based on the work of several contributors and open-source projects.
+This workflow is based on several open-source projects.
