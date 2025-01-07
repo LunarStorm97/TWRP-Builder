@@ -10,16 +10,16 @@ The TWRP Builder workflow allows you to build a custom TWRP recovery image for a
 
 Before running the workflow, make sure to configure the following parameters:
 
-| PARAMETERS           | DESCRIPTION           | DEFAULT VALUE                                                          |
-| -------------------- | --------------------- | ---------------------------------------------------------------------- |
-| `MANIFEST_URL`       | Source adress         | `https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp` |
-| `MANIFEST_BRANCH`    | Source branch         | `twrp-12.1`                                                            |
-| `DEVICE_TREE_URL`    | Device address        | `https://github.com/TeamWin/android_device_samsung_a23xq`              |
-| `DEVICE_TREE_BRANCH` | Device branch         | `android-12.1`                                                         |
-| `DEVICE_PATH`        | Device location       | `device/samsung/a23xq`                                                 |
-| `DEVICE_TARGET`      | Device codename       | `a23xq`                                                                |
-| `MAKEFILE_NAME`      | Makefile name         | `twrp_a23xq`                                                           |
-| `PARTITION_TARGET`   | Partition target      | `recovery`                                                             |
+| PARAMETERS         | DESCRIPTION      | DEFAULT VALUE                                                        |
+| ------------------ | ---------------- | -------------------------------------------------------------------- |
+| MANIFEST_URL       | SOURCE URL       | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp |
+| MANIFEST_BRANCH    | SOURCE BRANCH    | twrp-12.1                                                            |
+| DEVICE_TREE_URL    | DEVICE URL       | https://github.com/TeamWin/android_device_samsung_a23xq              |
+| DEVICE_TREE_BRANCH | DEVICE BRANCH    | android-12.1                                                         |
+| DEVICE_PATH        | DEVICE LOCATION  | device/samsung/a23xq                                                 |
+| DEVICE_CODENAME    | DEVICE CODENAME  | a23xq                                                                |
+| MAKEFILE_NAME      | MAKEFILE NAME    | twrp_a23xq                                                           |
+| PARTITION_TARGET   | PARTITION TARGET | recovery                                                             |
 
 ### Usage
 
