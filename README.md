@@ -10,16 +10,16 @@ The TWRP Builder workflow allows you to build a custom TWRP recovery image for a
 
 Before running the workflow, make sure to configure the following parameters:
 
-| PARAMETER            | DESCRIPTION        | DEFAULT VALUE                                                        |
-| -------------------- | ------------------ | -------------------------------------------------------------------- |
-| `MANIFEST_URL`       | MANIFEST URL       | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp |
-| `MANIFEST_BRANCH`    | MANIFEST BRANCH    | twrp-12.1                                                            |
-| `DEVICE_TREE_URL`    | DEVICE TREE URL    | https://github.com/TeamWin/android_device_samsung_a23xq              |
-| `DEVICE_TREE_BRANCH` | DEVICE TREE BRANCH | android-12.1                                                         |
-| `DEVICE_PATH`        | DEVICE PATH        | device/samsung/a23xq                                                 |
-| `DEVICE_CODENAME`    | DEVICE CODENAME    | a23xq                                                                |
-| `MAKEFILE_NAME`      | MAKEFILE NAME      | twrp_a23xq                                                           |
-| `PARTITION_TARGET`   | PARTITION TARGET   | recovery                                                             |
+| PARAMETER            | DEFAULT VALUE                                                        |
+| -------------------- | -------------------------------------------------------------------- |
+| `MANIFEST_URL`       | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp |
+| `MANIFEST_BRANCH`    | twrp-12.1                                                            |
+| `DEVICE_TREE_URL`    | https://github.com/TeamWin/android_device_samsung_a23xq              |
+| `DEVICE_TREE_BRANCH` | android-12.1                                                         |
+| `DEVICE_PATH`        | device/samsung/a23xq                                                 |
+| `DEVICE_CODENAME`    | a23xq                                                                |
+| `MAKEFILE_NAME`      | twrp_a23xq                                                           |
+| `PARTITION_TARGET`   | recovery                                                             |
 
 ### Usage
 
