@@ -10,23 +10,23 @@ The TWRP Builder workflow allows you to build a custom TWRP recovery image for a
 
 Before running the workflow, make sure to configure the following parameters:
 
-| Name                | Description                              |
-| ------------------- | ---------------------------------------- |
-| `MANIFEST_URL`      | Source address                           |
-| `MANIFEST_BRANCH`   | Source branch                            |
-| `DEVICE_TREE_URL`   | Device address                           |
-| `DEVICE_TREE_BRANCH`| Device branch                            |
-| `DEVICE_PATH`       | Device location                          |
-| `DEVICE_TARGET`     | Model name                               |
-| `MAKEFILE_NAME`     | Makefile name                            |
-| `PARTITION_TARGET`  | Partition target                         |
+| PARAMETERS           | DESCRIPTION
+| -------------------- | ----------------
+| `MANIFEST_URL`       | `Source address`
+| `MANIFEST_BRANCH`    | `Source branch`
+| `DEVICE_TREE_URL`    | `Device address`
+| `DEVICE_TREE_BRANCH` | `Device branch`
+| `DEVICE_PATH`        | `Device location`
+| `DEVICE_TARGET`      | `Device codename`
+| `MAKEFILE_NAME`      | `Makefile name`
+| `PARTITION_TARGET`   | `Partition target`
 
 ### Usage
 
 1. Fork this repository to your GitHub account.
 2. Navigate to the Actions tab in your forked repository.
 3. Select the TWRP Builder workflow and click on Run workflow.
-4. Provide the necessary values for each parameter based on your device and needs.
+4. Provide the necessary values for each parameter based on your device.
 5. Click on Run workflow to start the build process.
 
 ### Credits
