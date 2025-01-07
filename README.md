@@ -37,4 +37,4 @@ The workflow will download the required device trees and manifests, set up the b
 
 ### Credits
 
-This workflow is based on the work of several contributors and open-source projects. We appreciate all contributors for their efforts and dedication.
+This workflow is based on the work of several contributors and open-source projects.
