@@ -40,17 +40,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Display run parameters
-        run: |
-          echo "MANIFEST URL: ${{ github.event.inputs.MANIFEST_URL }}"
-          echo "MANIFEST BRANCH: ${{ github.event.inputs.MANIFEST_BRANCH }}"
-          echo "DEVICE TREE URL: ${{ github.event.inputs.DEVICE_TREE_URL }}"
-          echo "DEVICE TREE BRANCH: ${{ github.event.inputs.DEVICE_TREE_BRANCH }}"
-          echo "DEVICE PATH: ${{ github.event.inputs.DEVICE_PATH }}"
-          echo "DEVICE TARGET: ${{ github.event.inputs.DEVICE_TARGET }}"
-          echo "MAKEFILE NAME: ${{ github.event.inputs.MAKEFILE_NAME }}"
-          echo "PARTITION TARGET: ${{ github.event.inputs.PARTITION_TARGET }}.img"
-
       - name: Checkout
         uses: actions/checkout@v4.2.2
 
