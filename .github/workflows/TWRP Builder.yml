@@ -96,7 +96,7 @@ jobs:
         with:
           files: |
             /mnt/workspace/out/target/product/${{ github.event.inputs.DEVICE_CODENAME }}/${{ github.event.inputs.PARTITION_TARGET }}.img
-          name: ${{ github.event.inputs.DEVICE_TARGET }}-${{ github.run_id }}
+          name: ${{ github.event.inputs.DEVICE_CODENAME }}-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
           body: |
             MANIFEST URL: ${{ github.event.inputs.MANIFEST_URL }}
