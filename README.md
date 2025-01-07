@@ -12,7 +12,7 @@ Before running the workflow, make sure to configure the following parameters:
 
 ####
 
-| PARAMETERS         | DESCRIPTION      | DEFAULT VALUE                                                        |
+| PARAMETER          | DESCRIPTION      | DEFAULT VALUE                                                        |
 | ------------------ | ---------------- | -------------------------------------------------------------------- |
 | MANIFEST_URL       | SOURCE URL       | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp |
 | MANIFEST_BRANCH    | SOURCE BRANCH    | twrp-12.1                                                            |
