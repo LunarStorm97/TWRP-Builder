@@ -10,8 +10,6 @@ The TWRP Builder workflow allows you to build a custom TWRP recovery image for a
 
 Before running the workflow, make sure to configure the following parameters:
 
-####
-
 | PARAMETER          | DESCRIPTION      | DEFAULT VALUE                                                        |
 | ------------------ | ---------------- | -------------------------------------------------------------------- |
 | MANIFEST_URL       | SOURCE URL       | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp |
