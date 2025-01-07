@@ -68,6 +68,14 @@ jobs:
           chmod a+rx ~/.bin/repo
           sudo ln -s ~/.bin/repo /usr/bin/repo
 
+      - name: Cache
+        uses: actions/cache@v4.2.0
+        with:
+          path: /mnt/workspace/.repo
+          key: repo-${{ github.event.inputs.MANIFEST_URL }}-${{ github.event.inputs.MANIFEST_BRANCH }}
+          restore-keys: |
+            repo-${{ github.event.inputs.MANIFEST_URL }}
+
       - name: Initialize repo
         run: |
           repo init --depth 1 -b ${{ github.event.inputs.MANIFEST_BRANCH }} -u ${{ github.event.inputs.MANIFEST_URL }}
