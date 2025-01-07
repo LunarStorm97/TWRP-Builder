@@ -24,10 +24,10 @@ Before running the workflow, make sure to configure the following parameters:
 ### Usage
 
 1. Fork this repository to your GitHub account.
-2. Navigate to the Actions tab in your forked repository.
-3. Select the TWRP Builder workflow and click on Run workflow.
+2. Navigate to the "Actions" tab in your forked repository.
+3. Select the "TWRP Builder" workflow and click on "Run workflow".
 4. Provide the necessary values for each parameter based on your device.
-5. Click on Run workflow to start the build process.
+5. Click on "Run workflow" to start the build process.
 
 ### Credits
 
