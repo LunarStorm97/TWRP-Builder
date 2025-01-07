@@ -27,8 +27,6 @@ Before running the workflow, make sure to configure the following parameters:
 4. **Configure Parameters**: Provide the necessary values for each parameter based on your device and needs.
 5. **Start the Build**: Click on "Run workflow" to start the build process.
 
-The workflow will download the required device trees and manifests, set up the build environment, and generate the TWRP recovery image for your device.
-
 ### Credits
 
 This workflow is based on the work of several contributors and open-source projects.
