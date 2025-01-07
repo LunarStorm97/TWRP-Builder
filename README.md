@@ -1,4 +1,4 @@
-## TWRP Builder
+## TWRP Minimal Builder
 
 This repository provides a GitHub Actions workflow to automatically build a custom TWRP recovery image.
 
