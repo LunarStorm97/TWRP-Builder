@@ -23,16 +23,16 @@ on:
         description: "DEVICE_PATH"
         required: true
         default: "device/samsung/a23xq"
-      DEVICE_NAME:
-        description: "DEVICE_NAME"
+      DEVICE_TARGET:
+        description: "DEVICE_TARGET"
         required: true
         default: "a23xq"
       MAKEFILE_NAME:
         description: "MAKEFILE_NAME"
         required: true
         default: "twrp_a23xq"
-      BUILD_TARGET:
-        description: "BUILD_TARGET"
+      PARTITION_TARGET:
+        description: "PARTITION_TARGET"
         required: true
         default: "recovery"
 
@@ -47,9 +47,9 @@ jobs:
           echo "DEVICE TREE URL: ${{ github.event.inputs.DEVICE_TREE_URL }}"
           echo "DEVICE TREE BRANCH: ${{ github.event.inputs.DEVICE_TREE_BRANCH }}"
           echo "DEVICE PATH: ${{ github.event.inputs.DEVICE_PATH }}"
-          echo "DEVICE NAME: ${{ github.event.inputs.DEVICE_NAME }}"
+          echo "DEVICE TARGET: ${{ github.event.inputs.DEVICE_NAME }}"
           echo "MAKEFILE NAME: ${{ github.event.inputs.MAKEFILE_NAME }}"
-          echo "BUILD TARGET: ${{ github.event.inputs.BUILD_TARGET }}.img"
+          echo "PARTITION TARGET: ${{ github.event.inputs.BUILD_TARGET }}.img"
 
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -99,6 +99,6 @@ jobs:
           name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
           body: |
-            MANIFEST: ${{ github.event.inputs.MANIFEST_BRANCH }}
-            DEVICE: ${{ github.event.inputs.DEVICE_NAME }}
-            TARGET: ${{ github.event.inputs.BUILD_TARGET }}.img
+            MANIFEST BRANCH: ${{ github.event.inputs.MANIFEST_BRANCH }}
+            DEVICE TARGET: ${{ github.event.inputs.DEVICE_TARGET }}
+            PARTITION TARGET: ${{ github.event.inputs.PARTITION_TARGET }}.img
