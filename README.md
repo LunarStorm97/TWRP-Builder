@@ -9,9 +9,9 @@
 | `DEVICE_TREE_URL`    | Device address         | https://github.com/TeamWin/android_device_samsung_a23xq                  |
 | `DEVICE_TREE_BRANCH` | Device branch          | android-12.1                                                             |
 | `DEVICE_PATH`        | Device location        | device/samsung/a23xq                                                     |
-| `DEVICE_NAME`        | Model name             | a23xq                                                                    |
+| `DEVICE_TARGET`        | Model name             | a23xq                                                                    |
 | `MAKEFILE_NAME`      | Makefile name          | twrp_a23xq                                                               |
-| `BUILD_TARGET`       | Build Target Partition | recovery                                                                 |
+| `PARTITION_TARGET`       | Build Target Partition | recovery                                                                 |
 
 ---
 
