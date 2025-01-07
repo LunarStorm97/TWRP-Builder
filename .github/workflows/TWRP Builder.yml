@@ -71,7 +71,7 @@ jobs:
 
       - name: Initialize repo
         run: |
-          repo init -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }} --depth=1
+          repo init --depth 1 -b ${{ github.event.inputs.MANIFEST_BRANCH }} -u ${{ github.event.inputs.MANIFEST_URL }}
         working-directory: /mnt/workspace
 
       - name: Sync repo
