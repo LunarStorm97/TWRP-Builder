@@ -6,7 +6,7 @@ This repository provides a GitHub Actions workflow to automatically build a cust
 
 The TWRP Builder workflow allows you to build a custom TWRP recovery image for a specific Android device. This process automates the downloading of necessary device trees and manifests, setting up the build environment, and generating the recovery image.
 
-### Requirements
+#### Requirements
 
 Before running the workflow, make sure to configure the following parameters:
 
