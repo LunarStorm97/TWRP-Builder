@@ -10,7 +10,7 @@ The `TWRP Builder` workflow allows you to build a custom TWRP recovery image for
 
 Before running the workflow, make sure to configure the following parameters:
 
-- **MANIFEST_URL**: The URL of the AOSP or TWRP manifest.
+- **MANIFEST_URL**: The URL of the TWRP manifest.
 - **MANIFEST_BRANCH**: The branch of the manifest you want to use.
 - **DEVICE_TREE_URL**: The URL of the device tree for your specific model.
 - **DEVICE_TREE_BRANCH**: The branch of the device tree.
@@ -28,12 +28,6 @@ Before running the workflow, make sure to configure the following parameters:
 5. **Start the Build**: Click on "Run workflow" to start the build process.
 
 The workflow will download the required device trees and manifests, set up the build environment, and generate the TWRP recovery image for your device.
-
-### Notes
-
-- This workflow is designed to build TWRP recovery images.
-- Make sure the device trees and manifests are compatible with the Android version you wish to use.
-- The build may take several minutes to complete, depending on the load of GitHub Actions servers.
 
 ### Credits
 
