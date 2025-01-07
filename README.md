@@ -4,28 +4,28 @@ This repository provides a GitHub Actions workflow to automatically build a cust
 
 ### Description
 
-The `TWRP Builder` workflow allows you to build a custom TWRP recovery image for a specific Android device. This process automates the downloading of necessary device trees and manifests, setting up the build environment, and generating the recovery image.
+The TWRP Builder workflow allows you to build a custom TWRP recovery image for a specific Android device. This process automates the downloading of necessary device trees and manifests, setting up the build environment, and generating the recovery image.
 
 ### Requirements
 
 Before running the workflow, make sure to configure the following parameters:
 
-- **MANIFEST_URL**: The URL of the TWRP manifest.
-- **MANIFEST_BRANCH**: The branch of the manifest you want to use.
-- **DEVICE_TREE_URL**: The URL of the device tree for your specific model.
-- **DEVICE_TREE_BRANCH**: The branch of the device tree.
-- **DEVICE_PATH**: The path within the device tree where your device configuration is located.
-- **DEVICE_TARGET**: The codename of your device.
-- **MAKEFILE_NAME**: The build configuration file name for your device.
-- **PARTITION_TARGET**: The partition you want to build (e.g., `recovery`).
+- `MANIFEST_URL`: The URL of the TWRP manifest.
+- `MANIFEST_BRANCH`: The branch of the manifest you want to use.
+- `DEVICE_TREE_URL`: The URL of the device tree for your specific model.
+- `DEVICE_TREE_BRANCH`: The branch of the device tree.
+- `DEVICE_PATH`: The path within the device tree where your device configuration is located.
+- `DEVICE_TARGET`: The codename of your device.
+- `MAKEFILE_NAME`: The build configuration file name for your device.
+- `PARTITION_TARGET`: The partition you want to build (e.g., `recovery`).
 
 ### Usage
 
-1. **Fork the Repository**: Fork this repository to your GitHub account.
-2. **Access GitHub Actions**: Navigate to the "Actions" tab in your forked repository.
-3. **Run the Workflow**: Select the `TWRP Builder` workflow and click on "Run workflow".
-4. **Configure Parameters**: Provide the necessary values for each parameter based on your device and needs.
-5. **Start the Build**: Click on "Run workflow" to start the build process.
+1. Fork this repository to your GitHub account.
+2. Navigate to the Actions tab in your forked repository.
+3. Select the TWRP Builder workflow and click on Run workflow.
+4. Provide the necessary values for each parameter based on your device and needs.
+5. Click on Run workflow to start the build process.
 
 ### Credits
 
