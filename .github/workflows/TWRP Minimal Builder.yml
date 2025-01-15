@@ -99,10 +99,6 @@ jobs:
       - name: GH Release
         uses: softprops/action-gh-release@v2.2.1
         with:
-          files: |
-            /mnt/workspace/out/target/product/${{ github.event.inputs.DEVICE_CODENAME }}/${{ github.event.inputs.PARTITION_TARGET }}.img
-          name: ${{ github.event.inputs.DEVICE_CODENAME }}-${{ github.run_id }}
-          tag_name: ${{ github.run_id }}
           body: |
             MANIFEST URL: ${{ github.event.inputs.MANIFEST_URL }}
             MANIFEST BRANCH: ${{ github.event.inputs.MANIFEST_BRANCH }}
@@ -112,3 +108,7 @@ jobs:
             DEVICE CODENAME: ${{ github.event.inputs.DEVICE_CODENAME }}
             MAKEFILE NAME: ${{ github.event.inputs.MAKEFILE_NAME }}
             PARTITION TARGET: ${{ github.event.inputs.PARTITION_TARGET }}.img
+          files: |
+            /mnt/workspace/out/target/product/${{ github.event.inputs.DEVICE_CODENAME }}/${{ github.event.inputs.PARTITION_TARGET }}.img
+          name: ${{ github.event.inputs.DEVICE_CODENAME }}-${{ github.run_id }}
+          tag_name: ${{ github.run_id }}
