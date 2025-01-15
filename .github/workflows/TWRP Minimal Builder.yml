@@ -75,18 +75,15 @@ jobs:
           key: repo-${{ github.event.inputs.MANIFEST_BRANCH }}
 
       - name: Initialize repo
-        run: |
-          repo init --depth 1 -b ${{ github.event.inputs.MANIFEST_BRANCH }} -u ${{ github.event.inputs.MANIFEST_URL }}
+        run: repo init --depth 1 -b ${{ github.event.inputs.MANIFEST_BRANCH }} -u ${{ github.event.inputs.MANIFEST_URL }}
         working-directory: /mnt/workspace
 
       - name: Sync repo
-        run: |
-          repo sync -j$(nproc --all)
+        run: repo sync -j$(nproc --all)
         working-directory: /mnt/workspace
 
       - name: Clone device tree
-        run: |
-          git clone --depth 1 -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_TREE_URL }} ${{ github.event.inputs.DEVICE_PATH }}
+        run: git clone --depth 1 -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ${{ github.event.inputs.DEVICE_TREE_URL }} ${{ github.event.inputs.DEVICE_PATH }}
         working-directory: /mnt/workspace
 
       - name: Build recovery
@@ -108,7 +105,6 @@ jobs:
             DEVICE CODENAME: ${{ github.event.inputs.DEVICE_CODENAME }}
             MAKEFILE NAME: ${{ github.event.inputs.MAKEFILE_NAME }}
             PARTITION TARGET: ${{ github.event.inputs.PARTITION_TARGET }}.img
-          files: |
-            /mnt/workspace/out/target/product/${{ github.event.inputs.DEVICE_CODENAME }}/${{ github.event.inputs.PARTITION_TARGET }}.img
+          files: /mnt/workspace/out/target/product/${{ github.event.inputs.DEVICE_CODENAME }}/${{ github.event.inputs.PARTITION_TARGET }}.img
           name: ${{ github.event.inputs.DEVICE_CODENAME }}-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
